@@ -30,12 +30,14 @@ NeoBundle 'Valloric/YouCompleteMe', {
 \}
 call neobundle#end()
 
+filetype off
+filetype plugin indent on
+
+NeoBundleCheck
 "------------------------------------------------------
 set t_Co=256
 
-filetype off
 syntax on
-filetype plugin indent on
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 "au FileType python set omnifunc=pythoncomplete#Complete
