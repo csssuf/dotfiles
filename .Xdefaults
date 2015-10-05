@@ -1,0 +1,11 @@
+xterm*saveLines: 2000
+xterm*foreground: #ffffff
+xterm*background: #000000
+URxvt*background: black
+URxvt*foreground: white
+URxvt*scrollBar: false
+URxvt*buffered: false
+URxvt*dynamiccolors: true
+URxvt*font: xft:dejavusansmono:size=8
+!URxvt.faceName: DejaVu Sans Mono
+!URxvt.faceSize: 8
