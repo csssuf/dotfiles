@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 export FILES=(.gitconfig .i3status.conf .vimrc .Xdefaults .ycm_extra_conf.py
               .zshrc)
 export DIRS=(.i3 .oh-my-zsh .vim)
@@ -18,3 +19,6 @@ for dir in ${DIRS[*]}; do
     echo "Directory ${dir}"
     cp -r ./$dir ~/
 done 
+
+vim +NeoBundleInstall +q
+python2 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
