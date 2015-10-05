@@ -1,8 +1,11 @@
 "Neovundle----------------------------------------------
 if has('vim_starting')
+    if &compatible
+        set nocompatible
+    endif
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 "Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
@@ -25,6 +28,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
 	\	'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
 	\}
 \}
+call neobundle#end()
 
 "------------------------------------------------------
 set t_Co=256
