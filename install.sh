@@ -5,12 +5,16 @@ export DIRS=(.i3 .oh-my-zsh)
 
 for file in ${FILES[*]}; do
     echo "File ${file}"
-    mv ~/$file{,.bak}
+    if [ -e ~/$file ]; then
+        mv ~/$file{,.bak}
+    fi
     cp ./$file ~/$file
 done
 
 for dir in ${DIRS[*]}; do
-    echo "Directory ${dir}"
+    if [ -e ~/$dir ]; then
+        echo "Directory ${dir}"
+    fi
     mv ~/$dir{,.bak}
     cp -r ./$dir ~/
 done 
