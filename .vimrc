@@ -9,7 +9,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 "Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'git://git.wincent.com/command-t.git'
 NeoBundle 'SearchComplete'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
