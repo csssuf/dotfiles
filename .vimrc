@@ -9,8 +9,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 "Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-" Is this needed?
-NeoBundle 'Shougo/vimproc'
 " Tab-completion in searching with /
 NeoBundle 'SearchComplete'
 " Status line
@@ -25,7 +23,7 @@ NeoBundle 'Konfekt/fastfold'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
-filetype off
+filetype plugin indent on
 NeoBundleCheck
 
 " Done with the NeoBundle stuff.

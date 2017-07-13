@@ -1,5 +1,6 @@
 #!/bin/bash
 set -euo pipefail
+
 export FILES=(.gitconfig .i3status.conf .vimrc .Xdefaults .ycm_extra_conf.py
               .zshrc)
 export DIRS=(.i3 .oh-my-zsh .vim)
@@ -20,5 +21,7 @@ for dir in ${DIRS[*]}; do
     cp -r ./$dir ~/
 done 
 
+# Install NeoBundle.
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 vim +NeoBundleInstall +q
-python2 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
