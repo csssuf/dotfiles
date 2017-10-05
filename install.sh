@@ -1,8 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-export FILES=(.gitconfig .i3status.conf .vimrc .Xdefaults .ycm_extra_conf.py
-              .zshrc)
+export FILES=(.gitconfig .i3status.conf .vimrc .Xdefaults .zshrc)
 export DIRS=(.i3 .oh-my-zsh .vim)
 
 for file in ${FILES[*]}; do
