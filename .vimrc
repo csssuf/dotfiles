@@ -21,6 +21,10 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Konfekt/fastfold'
 " Support .editorconfig files
 NeoBundle 'editorconfig/editorconfig-vim'
+" Rust-specific stuff
+NeoBundle 'rust-lang/rust.vim'
+" Asynchronous Lint Engine
+NeoBundle 'w0rp/ale'
 
 call neobundle#end()
 filetype plugin indent on
@@ -79,6 +83,10 @@ syntax on
 au FileType python set foldmethod=indent
 au FileType python set foldlevel=99
 au FileType awk let b:delimitMate_quotes=""
+
+" Keybindings
+nnoremap <Leader>n :ALENextWrap<CR>
+nnoremap <Leader>p :ALEPreviousWrap<CR>
 
 " maybe remove these?
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
