@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-$ git clone --recursive https://github.com/csssuf/dotfiles
+$ git clone https://github.com/csssuf/dotfiles
 $ cd dotfiles
 $ ./install.sh
 ```
