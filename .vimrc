@@ -23,6 +23,8 @@ NeoBundle 'Konfekt/fastfold'
 NeoBundle 'editorconfig/editorconfig-vim'
 " Rust-specific stuff
 NeoBundle 'rust-lang/rust.vim'
+" GLSL-specific stuff
+NeoBundle 'tikhomirov/vim-glsl'
 " Asynchronous Lint Engine
 NeoBundle 'w0rp/ale'
 
@@ -85,8 +87,9 @@ au FileType python set foldlevel=99
 au FileType awk let b:delimitMate_quotes=""
 
 " Keybindings
-nnoremap <Leader>n :ALENextWrap<CR>
-nnoremap <Leader>p :ALEPreviousWrap<CR>
+let mapleader="\\"
+nmap <Leader>n <Plug>(ale_next_wrap)
+nmap <Leader>p <Plug>(ale_previous_wrap)
 
 " Plugin-specific options
 " Bufferline
