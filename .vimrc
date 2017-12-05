@@ -88,14 +88,6 @@ au FileType awk let b:delimitMate_quotes=""
 nnoremap <Leader>n :ALENextWrap<CR>
 nnoremap <Leader>p :ALEPreviousWrap<CR>
 
-" maybe remove these?
-au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-autocmd BufRead *\.txt setlocal lbr
-autocmd BufRead *\.txt map  j gj
-autocmd BufRead *\.txt  map  k gk
-autocmd BufRead *\.txt setlocal smartindent
-autocmd BufRead *\.spell setlocal spell spelllang=en_us
-
 " Plugin-specific options
 " Bufferline
 let g:bufferline_echo = 0
