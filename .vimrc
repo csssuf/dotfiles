@@ -21,12 +21,15 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Konfekt/fastfold'
 " Support .editorconfig files
 NeoBundle 'editorconfig/editorconfig-vim'
-" Rust-specific stuff
-NeoBundle 'rust-lang/rust.vim'
-" GLSL-specific stuff
-NeoBundle 'tikhomirov/vim-glsl'
+" Dark-powered asynchronous completions!
+NeoBundle 'Shougo/deoplete.nvim'
 " Asynchronous Lint Engine
 NeoBundle 'w0rp/ale'
+" Rust-specific stuff
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'sebastianmarkow/deoplete-rust'
+" GLSL-specific stuff
+NeoBundle 'tikhomirov/vim-glsl'
 
 call neobundle#end()
 filetype plugin indent on
@@ -91,8 +94,25 @@ let mapleader="\\"
 nmap <Leader>n <Plug>(ale_next_wrap)
 nmap <Leader>p <Plug>(ale_previous_wrap)
 
+au filetype rust nmap <buffer> gd <Plug>DeopleteRustGoToDefinitionSplit
+au filetype rust nmap <buffer> K <Plug>DeopleteRustShowDocumentation
+
 " Plugin-specific options
 " Bufferline
 let g:bufferline_echo = 0
 set statusline=%{bufferline#generate_string()}
 set laststatus=2
+" ALE
+if executable('rls')
+    let g:ale_linters = { 'rust': ['rls'] }
+endif
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+if executable('racer')
+    let g:deoplete#sources#rust#racer_binary = systemlist('which racer')[0]
+endif
+if executable('rustc')
+    let rust_sysroot = systemlist('rustc --print sysroot')[0]
+    let g:deoplete#sources#rust#rust_source_path=rust_sysroot . '/lib/rustlib/src/rust/src'
+endif
+let g:deoplete#sources#rust#disable_keymap = 1
