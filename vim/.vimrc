@@ -39,7 +39,11 @@ NeoBundleCheck
 
 " Basic configuration stuff
 set nocompatible
-set t_Co=256
+if has('nvim')
+    set termguicolors
+else
+    set t_Co=256
+endif
 set modeline
 
 " Relative line numbers, and absolute line number on current line.
