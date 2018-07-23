@@ -1,15 +1,16 @@
 [user]
-	email = csssuf@csssuf.net
-	name = James Forcier
+    email = csssuf@csssuf.net
+    name = James Forcier
+    signingKey = 9A2529A04873D9779E677F864383A5533F702898
 
 [core]
-	editor = vim
+    editor = vim
 
 [credential]
-	helper = cache --timeout=86400
+    helper = cache --timeout=86400
 
 [push]
-	default = simple
+    default = simple
 
 [url "git@github.com:"]
-	pushInsteadOf = "git://github.com/"
+    pushInsteadOf = "git://github.com/"
