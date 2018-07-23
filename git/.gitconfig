@@ -1,16 +1,15 @@
 [user]
 	email = csssuf@csssuf.net
 	name = James Forcier
+
 [core]
 	editor = vim
+
 [credential]
 	helper = cache --timeout=86400
+
 [push]
 	default = simple
+
 [url "git@github.com:"]
 	pushInsteadOf = "git://github.com/"
-[sendemail]
-	smtpencryption = tls
-	smtpserver = 173.254.238.134
-	smtpuser = csssuf
-	smtpserverport = 587
