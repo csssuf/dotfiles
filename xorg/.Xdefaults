@@ -1,8 +1,15 @@
 xterm*saveLines: 2000
 xterm*foreground: #ffffff
 xterm*background: #000000
+
 URxvt*background: black
 URxvt*foreground: white
 URxvt*scrollBar: false
 URxvt*buffered: false
 URxvt*dynamiccolors: true
+
+aterm*background: black
+aterm*foreground: white
+aterm*scrollBar: false
+aterm*buffered: false
+aterm*dynamiccolors: true
