@@ -14,3 +14,13 @@
 
 [url "git@github.com:"]
     pushInsteadOf = "git://github.com/"
+
+[rebase]
+    autosquash = true
+
+[sendemail]
+    from = James Forcier <csssuf@csssuf.net>
+    smtpserver = smtp.fastmail.com
+    smtpuser = csssuf@csssuf.net
+    smtpencryption = tls
+    smtpserverport = 587
