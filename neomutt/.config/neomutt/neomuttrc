@@ -1,0 +1,46 @@
+source solarized-dark-256.neomuttrc
+
+set imap_user="csssuf@csssuf.net"
+set imap_pass=`pass show email/fastmail-neomutt`
+
+set smtp_url="smtps://$imap_user@smtp.fastmail.com:465/"
+set smtp_pass=$imap_pass
+
+set realname="James Forcier"
+set from="csssuf@csssuf.net"
+
+set folder="imaps://imap.fastmail.com:993/"
+set spoolfile="+INBOX"
+set postponed="+INBOX.Drafts"
+set record="+INBOX.Sent Items"
+
+set crypt_use_gpgme=yes
+set pgp_default_key="9A2529A04873D9779E677F864383A5533F702898"
+
+set sleep_time=0
+set beep=no
+set editor="/usr/bin/nvim"
+set mail_check_stats
+
+set mime_forward
+set mime_forward_rest=yes
+
+set sidebar_visible
+set menu_scroll=yes
+set sort=threads
+set sort_aux=last-date-received
+set flag_chars="*!DdrUNun- "
+set hide_thread_subject=no
+set collapse_all=yes
+
+bind pager g top
+bind pager G bottom
+bind index,attach g first-entry
+bind index,attach G last-entry
+bind index R read-subthread
+bind index C collapse-all
+bind index c collapse-thread
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Ct sidebar-toggle-visible
