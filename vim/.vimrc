@@ -89,10 +89,10 @@ filetype on
 filetype plugin indent on
 syntax on
 
-au FileType python set foldmethod=indent
-au FileType python set foldlevel=99
+au FileType python setlocal foldmethod=indent
+au FileType python setlocal foldlevel=99
 au FileType awk let b:delimitMate_quotes=""
-au FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Keybindings
 let mapleader="\\"
