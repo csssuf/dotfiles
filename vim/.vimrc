@@ -92,6 +92,7 @@ syntax on
 au FileType python set foldmethod=indent
 au FileType python set foldlevel=99
 au FileType awk let b:delimitMate_quotes=""
+au FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Keybindings
 let mapleader="\\"
