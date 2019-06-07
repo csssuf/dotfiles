@@ -84,14 +84,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mplayer="mplayer2"
-#. ~/.gendev
+if [ -x $(which nvim) ]; then
+    alias vim="nvim"
+fi
 
 cleanup_cmake() {
     rm CMakeCache.txt cmake_install.cmake compile_commands.json Makefile
     rm -rf CMakeFiles
 }
 
+if [ -r ${HOME}/.cargo/env ]; then
+    source ${HOME}/.cargo/env
+fi
 
-export PATH=/home/james/torch/install/bin:$PATH  # Added automatically by torch-dist
-export LD_LIBRARY_PATH=/home/james/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
-export DYLD_LIBRARY_PATH=/home/james/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
+if [ -r ${HOME}/.zshrc.local ]; then
+    source ${HOME}/.zshrc.local
+fi
