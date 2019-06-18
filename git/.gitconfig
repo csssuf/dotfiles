@@ -24,3 +24,6 @@
     smtpuser = csssuf@csssuf.net
     smtpencryption = tls
     smtpserverport = 587
+
+[alias]
+	empty = "!f() { git commit --amend --no-edit --date \"$(date -R)\"; }; f"
