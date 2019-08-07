@@ -98,7 +98,8 @@ au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 foldmethod=indent
 let mapleader="\\"
 nmap <Leader>n <Plug>(ale_next_wrap)
 nmap <Leader>p <Plug>(ale_previous_wrap)
-nmap <Leader>d :ALEGoToDefinition<CR>
+nmap <Leader>gd <Plug>(ale_go_to_definition)
+nmap <Leader>gt <Plug>(ale_go_to_definition_in_tab)
 
 au filetype rust nmap <buffer> gd <Plug>DeopleteRustGoToDefinitionSplit
 au filetype rust nmap <buffer> K <Plug>DeopleteRustShowDocumentation
