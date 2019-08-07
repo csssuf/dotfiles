@@ -24,7 +24,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 " Dark-powered asynchronous completions!
 NeoBundle 'Shougo/deoplete.nvim'
 " Asynchronous Lint Engine
-NeoBundle 'w0rp/ale'
+NeoBundle 'dense-analysis/ale'
 " Rust-specific stuff
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'sebastianmarkow/deoplete-rust'
@@ -98,6 +98,7 @@ au FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 foldmethod=indent
 let mapleader="\\"
 nmap <Leader>n <Plug>(ale_next_wrap)
 nmap <Leader>p <Plug>(ale_previous_wrap)
+nmap <Leader>d :ALEGoToDefinition<CR>
 
 au filetype rust nmap <buffer> gd <Plug>DeopleteRustGoToDefinitionSplit
 au filetype rust nmap <buffer> K <Plug>DeopleteRustShowDocumentation
