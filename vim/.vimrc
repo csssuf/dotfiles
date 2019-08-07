@@ -109,8 +109,18 @@ let g:bufferline_echo = 0
 set statusline=%{bufferline#generate_string()}
 set laststatus=2
 " ALE
-if executable('rls')
-    let g:ale_linters = { 'rust': ['rls'] }
+let g:ale_linters = {}
+if executable('ra_lsp_server')
+    let g:ale_linters.rust = ['rls']
+    let g:ale_rust_rls_executable = 'ra_lsp_server'
+    let g:ale_rust_rls_toolchain = ''
+else
+    if executable('rls')
+        let g:ale_linters.rust = ['rls']
+    endif
+endif
+if executable('pyls')
+    let g:ale_linters.python = ['pyls']
 endif
 " Deoplete
 let g:deoplete#enable_at_startup = 1
