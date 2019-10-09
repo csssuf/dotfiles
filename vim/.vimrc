@@ -133,3 +133,5 @@ if executable('rustc')
     let g:deoplete#sources#rust#rust_source_path=rust_sysroot . '/lib/rustlib/src/rust/src'
 endif
 let g:deoplete#sources#rust#disable_keymap = 1
+" indentLine
+au filetype json let g:indentLine_setConceal = 0
