@@ -30,6 +30,8 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'sebastianmarkow/deoplete-rust'
 " GLSL-specific stuff
 NeoBundle 'tikhomirov/vim-glsl'
+" Jinja2
+NeoBundle 'Glench/Vim-Jinja2-Syntax'
 
 call neobundle#end()
 filetype plugin indent on
