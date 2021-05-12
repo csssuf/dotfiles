@@ -103,6 +103,9 @@ nmap <Leader>gt <Plug>(ale_go_to_definition_in_tab)
 
 au filetype rust nmap <buffer> gd <Plug>DeopleteRustGoToDefinitionSplit
 au filetype rust nmap <buffer> K <Plug>DeopleteRustShowDocumentation
+au filetype rust nmap <buffer> <C-]> <Plug>(ALEGoToDefinition)
+
+au filetype go setlocal noexpandtab
 
 " Plugin-specific options
 " Bufferline
@@ -121,7 +124,17 @@ else
     endif
 endif
 if executable('pyls')
-    let g:ale_linters.python = ['pyls']
+    let g:ale_linters.python = ['pyls', 'mypy']
+    let g:ale_python_pyls_config = {
+    \     'pyls': {
+    \         'configurationSources': ['flake8'],
+    \         'plugins': {
+    \             'pyls_mypy': {
+    \                 'enabled': 'true'
+    \             }
+    \         }
+    \     }
+    \ }
 endif
 " Deoplete
 let g:deoplete#enable_at_startup = 1
