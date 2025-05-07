@@ -12,7 +12,7 @@ plugins=(git)
 # User configuration
 
 # Path manipulation
-export PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.7.3:/usr/games/bin:"
+export OLDPATH="${PATH}"
 if [ -r ~/cross-compilers/list ]; then
     for i in $(cat ~/cross-compilers/list); do
         export PATH="$HOME/cross-compilers/${i}/bin:$PATH"
@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias mplayer="mplayer2"
-if [ -x $(which nvim) ]; then
+if [[ -x $(which nvim) ]]; then
     alias vim="nvim"
 fi
 
