@@ -7,7 +7,7 @@ plugins=(git)
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # User configuration
 
@@ -23,7 +23,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias mplayer="mplayer2"
 if [[ -x $(which nvim) ]]; then
     alias vim="nvim"
 fi
