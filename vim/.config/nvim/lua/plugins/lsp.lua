@@ -8,6 +8,11 @@ return {
         init = function()
             vim.g.coq_settings = {
                 auto_start = true,
+                display = {
+                    statusline = {
+                        helo = false,
+                    },
+                },
             }
         end,
         config = function()
